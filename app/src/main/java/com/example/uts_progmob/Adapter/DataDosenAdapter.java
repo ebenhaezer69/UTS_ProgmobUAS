@@ -37,8 +37,8 @@ public class DataDosenAdapter extends RecyclerView.Adapter<DataDosenAdapter.View
         holder.txtGelar.setText(dataDosenArrayList.get(position).getGelar());
         holder.txtAlamat.setText(dataDosenArrayList.get(position).getAlamat());
         holder.txtEmail.setText(dataDosenArrayList.get(position).getEmail());
-        holder.imgViewDosen.getLayoutParams{}.width = 100;
-        holder.imgViewDosen.getLayoutParams{}.height = 100;
+        holder.imgViewDosen.getLayoutParams().width = 100;
+        holder.imgViewDosen.getLayoutParams().height = 100;
         if (dataDosenArrayList.get(position).getFoto() != null)
             Picasso.with(this.context).load(dataDosenArrayList.get(position).getFoto()).into(holder.imgViewDosen);
     }
