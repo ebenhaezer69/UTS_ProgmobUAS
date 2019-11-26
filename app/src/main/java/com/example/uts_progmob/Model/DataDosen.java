@@ -1,24 +1,45 @@
 package com.example.uts_progmob.Model;
 
 public class DataDosen {
-    public String nidnNama;
+    /*@SerializedName("id")*/
+    public String foto;
+    public String nidn;
+    public String nama;
     public String gelar;
     public String alamat;
     public String email;
 
-    public DataDosen(String nidnNama, String gelar, String alamat, String email) {
-        this.nidnNama = nidnNama;
+    public DataDosen(String nidn, String gelar, String alamat, String email, String foto, String nama) {
+        this.nidn = nidn;
         this.gelar = gelar;
         this.alamat = alamat;
         this.email = email;
+        this.foto = foto;
+        this.nama = nama;
     }
 
-    public String getNidnNama() {
-        return nidnNama;
+    public String getNidn() {
+        return nidn;
     }
 
-    public void setNidnNama(String nidnNama) {
-        this.nidnNama = nidnNama;
+    public void setNidn(String nidn) {
+        this.nidn = nidn;
+    }
+
+    public String getNama(){
+        return nama;
+    }
+
+    public void setNama(String nama){
+        this.nama = nama;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public String getGelar() {
