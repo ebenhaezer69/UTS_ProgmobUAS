@@ -1,13 +1,27 @@
 package com.example.uts_progmob.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DataDosen {
+    @SerializedName("nidn")
+    private String nidn;
+    @SerializedName("nama")
+    private String nama;
+    @SerializedName("gelar")
+    private String gelar;
+    @SerializedName("alamat")
+    private String alamat;
+    @SerializedName("email")
+    private String email;
+    @SerializedName("foto")
+    private String foto;
     /*@SerializedName("id")*/
-    public String foto;
+    /*public String foto;
     public String nidn;
     public String nama;
     public String gelar;
     public String alamat;
-    public String email;
+    public String email;*/
 
     public DataDosen(String nidn, String gelar, String alamat, String email, String foto, String nama) {
         this.nidn = nidn;
