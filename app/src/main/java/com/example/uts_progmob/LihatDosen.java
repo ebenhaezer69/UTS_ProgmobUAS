@@ -14,7 +14,6 @@ import com.example.uts_progmob.Model.DataDosen;
 import com.example.uts_progmob.Adapter.DataKelasAdapter;
 import com.example.uts_progmob.Network.GetDataService;
 import com.example.uts_progmob.Network.RetrofitClientInstance;
-import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 /*import com.example.uts_progmob.Network.GetDataService;*/
@@ -39,14 +38,13 @@ public class LihatDosen extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        /*GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         Call<List<DataDosen>> call = service.getDosenAll("72160071");
         call.enqueue(new Call.Callback<List<DataDosen>>());
         @Override
         public void onResponse
         (Call < List < DataDosen >> call, Response < List < DataDosen >> Response){
-            progressDialog.dismiss();
-
+            progressDialog.dismiss();*/
 
             recyclerView = findViewById(R.id.rvDosen);
             dataDosenAdapter = new DataDosenAdapter(dataDosenArrayList);
@@ -55,12 +53,12 @@ public class LihatDosen extends AppCompatActivity {
             recyclerView.setAdapter(dataDosenAdapter);
         }
 
-        @Override
-        public void onFailure(Call<List<DataDosen>> call, Throwable t) {
-            progressDialog.dismiss();
-            Toast.makeText(LihatDosen.this,"Login Gagal", Toast.LENGTH_SHORT).show();
-        }
-    }
+
+    /*@Override
+    public void onFailure(Call<List<DataDosen>> call, Throwable t) {
+        progressDialog.dismiss();
+        Toast.makeText(LihatDosen.this,"Login Gagal", Toast.LENGTH_SHORT).show();
+    }*/
 
     private void addData(){
         dataDosenArrayList = new ArrayList<>();

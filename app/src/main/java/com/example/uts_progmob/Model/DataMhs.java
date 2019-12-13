@@ -11,15 +11,25 @@ public class DataMhs {
     private String alamat;
     @SerializedName("email")
     private String email;
+    @SerializedName("foto")
+    private  String foto;
     /*public String nimNama;
     public String Alamat;
     public String email;*/
 
-    public DataMhs(String nim, String alamat, String email, String nama) {
+    public DataMhs(String nim, String alamat, String email, String nama, String foto) {
         this.nim = nim;
         this.nama = nama;
         this.alamat = alamat;
         this.email = email;
+        this.foto = foto;
+    }
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto){
+        this.foto = foto;
     }
 
     public String getNim() {

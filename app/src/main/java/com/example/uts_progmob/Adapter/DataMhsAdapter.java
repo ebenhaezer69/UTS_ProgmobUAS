@@ -1,8 +1,10 @@
 package com.example.uts_progmob.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,11 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uts_progmob.Model.DataMatkul;
 import com.example.uts_progmob.Model.DataMhs;
 import com.example.uts_progmob.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class DataMhsAdapter extends RecyclerView.Adapter<DataMhsAdapter.ViewHolder> {
     ArrayList <DataMhs> dataMhsArrayList;
+    Context context;
 
     public DataMhsAdapter (ArrayList<DataMhs> dataMatkulArrayList) {
         this.dataMhsArrayList = dataMatkulArrayList;
@@ -31,9 +35,16 @@ public class DataMhsAdapter extends RecyclerView.Adapter<DataMhsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull DataMhsAdapter.ViewHolder holder, int position){
-        holder.txtNimNama.setText(dataMhsArrayList.get(position).getNimNama());
+        holder.txtNim.setText(dataMhsArrayList.get(position).getNim());
+        holder.txtNama.setText(dataMhsArrayList.get(position).getNama());
         holder.txtAlamat.setText(dataMhsArrayList.get(position).getAlamat());
         holder.txtEmail.setText(dataMhsArrayList.get(position).getEmail());
+        holder.imgViewMhs.getLayoutParams().width = 100;
+        holder.imgViewMhs.getLayoutParams().height = 100;
+        if (dataMhsArrayList.get(position).getFoto() != null)
+            Picasso.with(this.context).load("https://kpsi.fti.ukdw.ac.id"+dataMhsArrayList.get(position).getFoto())
+                    /*.transform(new CropCircleTransformation())*/
+                    .into(holder.imgViewMhs);
     }
 
     @Override
@@ -42,13 +53,16 @@ public class DataMhsAdapter extends RecyclerView.Adapter<DataMhsAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtNimNama, txtAlamat, txtEmail;
+        private TextView txtNim, txtAlamat, txtEmail, txtNama;
+        ImageView imgViewMhs;
 
         public ViewHolder (View view) {
             super(view);
-            txtNimNama = view.findViewById(R.id.txtNimNama);
+            txtNim = view.findViewById(R.id.txtNim);
+            txtNama = view.findViewById(R.id.txtNama);
             txtEmail = view.findViewById(R.id.txtEmail);
             txtAlamat = view.findViewById(R.id.txtAlamat);
+            imgViewMhs = view.findViewById(R.id.imageView2);
         }
     }
 }

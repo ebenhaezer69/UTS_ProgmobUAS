@@ -1,8 +1,10 @@
 package com.example.uts_progmob.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 
 public class DataDosenAdapter extends RecyclerView.Adapter<DataDosenAdapter.ViewHolder> {
     ArrayList <DataDosen> dataDosenArrayList;
+    Context context;
 
     public DataDosenAdapter (ArrayList<DataDosen> dataDosenArrayList){
         this.dataDosenArrayList = dataDosenArrayList;
@@ -40,7 +43,10 @@ public class DataDosenAdapter extends RecyclerView.Adapter<DataDosenAdapter.View
         holder.imgViewDosen.getLayoutParams().width = 100;
         holder.imgViewDosen.getLayoutParams().height = 100;
         if (dataDosenArrayList.get(position).getFoto() != null)
-            Picasso.with(this.context).load(dataDosenArrayList.get(position).getFoto()).into(holder.imgViewDosen);
+            Picasso.with(this.context).load("https://kpsi.fti.ukdw.ac.id"+dataDosenArrayList.get(position).getFoto())
+            /*.transform(new CropCircleTransformation())*/
+                    .into(holder.imgViewDosen);
+
     }
 
     @Override
@@ -49,15 +55,16 @@ public class DataDosenAdapter extends RecyclerView.Adapter<DataDosenAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtNidn, txtGelar, txtAlamat, txtEmail, txtNama, imgViewDosen;
+        public TextView txtNidn, txtGelar, txtAlamat, txtEmail, txtNama;
+        public ImageView imgViewDosen;
 
         public ViewHolder (View view) {
             super(view);
-            txtNidn = view.findViewById(R.id.txtNidn);
+            txtNidn = view.findViewById(R.id.txtNidnD);
             txtGelar = view.findViewById(R.id.txtGelar);
             txtEmail = view.findViewById(R.id.txtEmailD);
             txtAlamat = view.findViewById(R.id.txtAlamatD);
-            txtNama = view.findViewById(R.id.txtNama);
+            txtNama = view.findViewById(R.id.txtNamaD);
             imgViewDosen = view.findViewById(R.id.imgViewDosen);
         }
     }

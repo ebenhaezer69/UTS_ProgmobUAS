@@ -12,11 +12,11 @@
         android:layout_height="211dp">
 
         <TextView
-            android:id="@+id/txtNidn"
-            android:layout_width="210dp"
-            android:layout_height="38dp"
+            android:id="@+id/txtNidnD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="14dp"
             android:text="TextView"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,14 +27,15 @@
             android:layout_width="207dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNama" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNidnD" />
 
         <TextView
             android:id="@+id/txtEmailD"
-            android:layout_width="210dp"
-            android:layout_height="36dp"
+            android:layout_width="209dp"
+            android:layout_height="37dp"
             android:layout_marginStart="8dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,18 +56,17 @@
             android:layout_height="192dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintStart_toEndOf="@+id/txtEmailD"
+            app:layout_constraintStart_toEndOf="@+id/txtAlamatD"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/txtNama"
-            android:layout_width="206dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="1dp"
+            android:id="@+id/txtNamaD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNidn" />
+            app:layout_constraintStart_toEndOf="@+id/txtNidnD"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

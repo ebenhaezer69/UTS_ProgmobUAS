@@ -20,9 +20,9 @@ public interface GetDataService {
     Call<List<DataDosen>> getDosenAll(@Path("nim_progmob") String nim_progmob);
     //Call<List<Dosen>> getDosenAll(@Query("nim_progmob") String nim_progmob);
 
-/*    @FormUrlEncoded
+    @FormUrlEncoded
     @POST("/api/progmob/dosen/create")
-    Call<DefaultResult> insert_dosen(
+    Call<DataDosen> insert_dosen(
             @Field("nama") String nama,
             @Field("nidn") String nidn,
             @Field("alamat") String alamat,
@@ -30,7 +30,8 @@ public interface GetDataService {
             @Field("gelar") String gelar,
             @Field("foto") String foto,
             @Field("nim_progmob") String nim_progmob
-    );*/
+    );
+}
 
     /*@FormUrlEncoded
     @POST("/si_mapping/api/user_login.php")
@@ -91,6 +92,7 @@ public interface GetDataService {
     @GET("/si_mapping/api/read_one_detail_lahan.php")
     Call<List<DetilTitikLahan>> getDetilTitikLahan(@Query("id_lahan") String id_lahan);
 
-    *//*@GET("/1.1/statuses/user_timeline.json?screen_name=BPPTKG&count=10")
-    Call<List<UserLogin>> getAllTwitFromBpptkg();*/
-}
+    @GET("/1.1/statuses/user_timeline.json?screen_name=BPPTKG&count=10")
+    Call<List<UserLogin>> getAllTwitFromBpptkg(); /*
+
+     */
